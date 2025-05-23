@@ -1,4 +1,4 @@
-# 🧾 Documentazione prima fase progetto TaskManagerAPI
+# 🧾 Documentazione progetto TaskManagerAPI
 
 ## ✅ Obiettivo
 
@@ -35,7 +35,7 @@ Sviluppare una **Web API RESTful completa** in ASP.NET Core per la gestione di t
 
 - Creata entità `Task` con proprietà `Id`, `Title`, `Description`, `IsCompleted`
 - Creato `TaskAllDto` per esporre solo alcuni campi
-- Creato `TaskDbContext` con `DbSet<Task>`
+- Costruito `TaskDbContext` con `DbSet<Task>`
 - Risolto conflitto con `System.Threading.Tasks.Task` usando nome completo o alias
 
 ## 🔷 Fase 4: test realistico con EF Core InMemory
@@ -47,7 +47,7 @@ Contiene 3 test separati:
 1. **`Aggiunge_Task_Correttamente`**
    - Crea un task, lo salva e verifica che esista nel contesto
 
-2. **`Legge_Task_Salvato`**
+2. **`Legge_Task_Salvato`** 
    - Legge un task salvato precedentemente e ne verifica il titolo
 
 3. **`Verifica_IsCompleted_False_Di_Default`**
@@ -55,9 +55,19 @@ Contiene 3 test separati:
 
 Utilizza `DbContextOptions` e `UseInMemoryDatabase()` per simulare l'ambiente senza database reale.
 
+## 🔷 Fase 5: collegamento al database reale con SQLite
+
+- Installato pacchetto NuGet `Microsoft.EntityFrameworkCore.Sqlite`
+- Aggiunta stringa di connessione in `appsettings.json`
+- Registrato `TaskDbContext` in `Program.cs` tramite dependency injection
+- Installato pacchetto `Microsoft.EntityFrameworkCore.Tools`
+- Creata migrazione iniziale `InitialCreate` con il comando `Add-Migration`
+- Applicata la migrazione con `Update-Database`
+- Generato il file SQLite `taskmanager.db` con la tabella `Tasks`
+
 ## 🔜 Prossimi step
 
-1. 🔧 **Configurare** `DbContext` in `Program.cs` con database reale (es: SQLite, MySQL)
+1. 🔧 **Configurare** `DbContext` in `Program.cs` con database reale (es: SQLite, MySQL) ✅ **FATTO**
 
 2. 🛠️ **Aggiungere** `TasksController` con routing REST
 
