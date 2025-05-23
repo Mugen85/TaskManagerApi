@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using TaskManager.Api.Data;
+
 namespace TaskManager.Api
 {
     public class Program
@@ -13,6 +16,11 @@ namespace TaskManager.Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+            builder.Services.AddDbContext<TaskDbContext>(options =>
+                options.UseSqlite(connectionString));
 
             var app = builder.Build();
 
