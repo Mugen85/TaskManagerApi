@@ -1,0 +1,15 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build
+bin/
+obj/
+
+# Test
+TestResults/
+
+# Mac/Linux/Windows system files
+.DS_Store
+Thumbs.db
