@@ -107,7 +107,9 @@ dotnet test --collect:"XPlat Code Coverage"
 La documentazione tecnica dettagliata si trova nella cartella `docs/`:
 
 - [Documentazione completa del progetto](docs/Documentazione-creazione-progetto.md)
+
 - Diagrammi dell'architettura (in sviluppo)
+![Diagramma architettura](docs/TaskManagerApiFlowChartClaude.drawio.png)
 - Guide per sviluppatori (in sviluppo)
 
 ## 👨‍💻 Autore

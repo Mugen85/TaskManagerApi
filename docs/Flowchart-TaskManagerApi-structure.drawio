@@ -1,0 +1,55 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.5 Chrome/134.0.6998.205 Electron/35.3.0 Safari/537.36" version="27.0.5">
+  <diagram name="TaskManagerAPI Architecture" id="Zx0fan-pP1pq5F7obOs4">
+    <mxGraphModel dx="1042" dy="634" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="0HBkLmpa0MdwLe7atcQg-1" value="TaskManagerAPI - Architettura Completa" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="265" y="20" width="400" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0HBkLmpa0MdwLe7atcQg-2" value="CLIENT LAYER" style="swimlane;html=1;startSize=20;horizontal=0;collapsible=0;marginBottom=0;swimlaneLine=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="80" width="830" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="0HBkLmpa0MdwLe7atcQg-3" value="Blazor WebAssembly&#xa;Frontend" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontStyle=1;" vertex="1" parent="0HBkLmpa0MdwLe7atcQg-2">
+          <mxGeometry x="100" y="30" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="0HBkLmpa0MdwLe7atcQg-4" value="• Task Management UI&#xa;• Authentication Forms&#xa;• Responsive Interface" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;align=left;" vertex="1" parent="0HBkLmpa0MdwLe7atcQg-2">
+          <mxGeometry x="250" y="25" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0HBkLmpa0MdwLe7atcQg-5" value="JWT Token&#xa;Management" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontStyle=1;" vertex="1" parent="0HBkLmpa0MdwLe7atcQg-2">
+          <mxGeometry x="470" y="35" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0HBkLmpa0MdwLe7atcQg-6" value="🌐 Browser" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;" vertex="1" parent="0HBkLmpa0MdwLe7atcQg-2">
+          <mxGeometry x="620" y="30" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="0HBkLmpa0MdwLe7atcQg-7" value="API LAYER" style="swimlane;html=1;startSize=20;horizontal=0;collapsible=0;marginBottom=0;swimlaneLine=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="200" width="830" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="0HBkLmpa0MdwLe7atcQg-8" value="ASP.NET Core 8.0&#xa;Web API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontStyle=1;" vertex="1" parent="0HBkLmpa0MdwLe7atcQg-7">
+          <mxGeometry x="100" y="35" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="0HBkLmpa0MdwLe7atcQg-9" value="TasksController&#xa;• GET /api/tasks&#xa;• POST /api/tasks&#xa;• PUT /api/tasks/{id}&#xa;• DELETE /api/tasks/{id}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;align=left;" vertex="1" parent="0HBkLmpa0MdwLe7atcQg-7">
+          <mxGeometry x="250" y="20" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0HBkLmpa0MdwLe7atcQg-10" value="Middleware&#xa;• JWT Auth&#xa;• Error Handling&#xa;• Validation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;align=left;" vertex="1" parent="0HBkLmpa0MdwLe7atcQg-7">
+          <mxGeometry x="420" y="25" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="0HBkLmpa0MdwLe7atcQg-11" value="📋 Swagger&#xa;OpenAPI Docs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=1;" vertex="1" parent="0HBkLmpa0MdwLe7atcQg-7">
+          <mxGeometry x="560" y="35" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="0HBkLmpa0MdwLe7atcQg-12" value="Program.cs&#xa;Configuration" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;fontStyle=1;" vertex="1" parent="0HBkLmpa0MdwLe7atcQg-7">
+          <mxGeometry x="680" y="35" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="0HBkLmpa0MdwLe7atcQg-13" value="BUSINESS LOGIC" style="swimlane;html=1;startSize=20;horizontal=0;collapsible=0;marginBottom=0;swimlaneLine=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="340" width="830" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="0HBkLmpa0MdwLe7atcQg-14" value="AutoMapper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;" vertex="1" parent="0HBkLmpa0MdwLe7atcQg-13">
+          <mxGeometry x="200" y="25" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0HBkLmpa0MdwLe7atcQg-15" value="Entity ↔ DTO Mapping&#xa;• TaskAllDto&#xa;• Request/Response Models" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;align=left;" vertex="1" parent="0HBkLmpa0MdwLe7atcQg-13">
+          <mxGeometry x="350" y="15" width="180" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -80,3 +80,4 @@ Utilizza `DbContextOptions` e `UseInMemoryDatabase()` per simulare l'ambiente se
 6. 📄 **Abilitare Swagger** per documentare le API
 
 7. 🎨 **Creare frontend in Blazor WebAssembly** per interfaccia utente completa
+
