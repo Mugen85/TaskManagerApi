@@ -41,7 +41,7 @@ Il progetto è pensato per:
 
 - ✔️ Struttura professionale con separazione `src/`, `tests/`, `docs/`
 - ✔️ Creazione della soluzione e dei due progetti (API e test)
-- ✔️ Implementazione iniziale dell'entità `TodoTask` (ex `Task`) e `TaskAllDto`
+- ✔️ Implementazione iniziale dell'entità `ToDoTask` (ex `Task`) e `TaskAllDto`
 - ✔️ Costruzione del `TaskDbContext` con EF Core
 - ✔️ Refactor AutoMapper con `UserProfile`
 - ✔️ Implementazione completa di `TasksController` con metodi REST (GET, POST, PUT, DELETE)
