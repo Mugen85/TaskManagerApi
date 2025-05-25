@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TaskManager.Api.Entities;
 
 namespace TaskManager.Api.Data
 {
     public class TaskDbContext(DbContextOptions<TaskDbContext> options) : DbContext(options)
     {
-        public DbSet<TaskManager.Api.Entities.Task> Tasks { get; set; }  // rappresenta la tabella "Tasks"
+        public DbSet<ToDoTask> Tasks { get; set; }
     }
 }

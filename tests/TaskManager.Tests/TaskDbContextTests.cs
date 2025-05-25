@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TaskManager.Api.Data;
-using Task = TaskManager.Api.Entities.Task;
+using TaskManager.Api.Entities;
+using Task = TaskManager.Api.Entities.ToDoTask;
 
 namespace TaskManager.Tests
 {
@@ -22,7 +23,7 @@ namespace TaskManager.Tests
             // Act
             using (var context = new TaskDbContext(options))
             {
-                var task = new Task
+                var task = new ToDoTask
                 {
                     Title = "Scrivere test",
                     Description = "Test sul DbContext",
@@ -49,7 +50,7 @@ namespace TaskManager.Tests
 
             using (var context = new TaskDbContext(options))
             {
-                context.Tasks.Add(new Task
+                context.Tasks.Add(new ToDoTask
                 {
                     Title = titolo,
                     Description = "Leggere da InMemory DB",
@@ -75,7 +76,7 @@ namespace TaskManager.Tests
 
             using (var context = new TaskDbContext(options))
             {
-                context.Tasks.Add(new Task
+                context.Tasks.Add(new ToDoTask
                 {
                     Title = "Controllo completamento",
                     Description = "Verifica flag booleano",

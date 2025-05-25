@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using TaskManager.Api.Data;
+using TaskManager.Api.Mappings;
 
 namespace TaskManager.Api
 {
@@ -21,6 +22,9 @@ namespace TaskManager.Api
 
             builder.Services.AddDbContext<TaskDbContext>(options =>
                 options.UseSqlite(connectionString));
+
+            builder.Services.AddAutoMapper(typeof(UserProfile));
+
 
             var app = builder.Build();
 

@@ -1,6 +1,6 @@
 ﻿namespace TaskManager.Api.Entities
 {
-    public class Task
+    public class ToDoTask
     {
         public int Id { get; set; }                 // chiave primaria
         public string? Title { get; set; }           // titolo del task
