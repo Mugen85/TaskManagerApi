@@ -27,14 +27,24 @@ Il progetto è pensato per:
 
 ```
 📦 TaskManagerApi
-├── 📁 src                  --> Codice dell'applicazione principale
-│   └── 📁 TaskManager.Api
-├── 📁 tests                --> Test automatici
-│   └── 📁 TaskManager.Tests
-├── 📁 docs                 --> Documentazione tecnica e diagrammi
-├── 📝 .gitignore           --> Esclusione file da Git
-├── 📖 README.md            --> Introduzione generale al progetto
-└── 📦 TaskManagerAPI.sln   --> File soluzione Visual Studio
+├── 📁 docs --> Documentazione tecnica e diagrammi
+├── 📁 src
+│ └── 📁 TaskManager.Api --> Codice dell'applicazione principale (API REST)
+│ ├── 📁 Controllers --> API Controllers (Tasks, WeatherForecast)
+│ ├── 📁 Data --> DbContext (EF Core)
+│ ├── 📁 Dtos --> Data Transfer Objects (es. TaskAllDto)
+│ ├── 📁 Entities --> Entità del dominio (es. ToDoTask)
+│ ├── 📁 Mappings --> Profili AutoMapper
+│ ├── 📁 Migrations --> Eventuali migrazioni EF (se presenti)
+│ ├── 📄 Program.cs --> Avvio e configurazione dell'app
+│ ├── 📄 appsettings.json --> Configurazione globale
+├── 📁 tests
+│ └── 📁 TaskManager.Tests --> Test automatici del progetto API
+│ ├── 📄 TaskDbContextTests.cs
+│ ├── 📄 TasksControllerTests.cs
+├── 📝 .gitignore --> File di esclusione da Git
+├── 📖 README.md --> Introduzione generale al progetto
+└── 📦 TaskManagerAPI.sln --> Soluzione Visual Studio
 ```
 
 ## ✅ Stato attuale dello sviluppo
