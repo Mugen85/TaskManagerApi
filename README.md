@@ -41,22 +41,27 @@ Il progetto è pensato per:
 
 - ✔️ Struttura professionale con separazione `src/`, `tests/`, `docs/`
 - ✔️ Creazione della soluzione e dei due progetti (API e test)
-- ✔️ Implementazione iniziale dell'entità `Task` e `TaskAllDto`
+- ✔️ Implementazione iniziale dell'entità `TodoTask` (ex `Task`) e `TaskAllDto`
 - ✔️ Costruzione del `TaskDbContext` con EF Core
-- ✔️ Test automatici separati con EF Core InMemory
+- ✔️ Refactor AutoMapper con `UserProfile`
+- ✔️ Implementazione completa di `TasksController` con metodi REST (GET, POST, PUT, DELETE)
+- ✔️ Test automatici del controller con xUnit e InMemory DB
+- ✔️ Rimozione conflitto con tipo `Task` di sistema (C#)
 - ✔️ Documentazione interna (`docs/riassunto-taskmanagerapi.md`)
+
 
 ## 🗺️ Roadmap di sviluppo
 
 ### 🔧 Backend
 
-- [ ] Configurare `DbContext` in `Program.cs` con database reale (SQLite o MySQL)
-- [ ] Aggiungere `TasksController` con routing REST
-- [ ] Implementare metodi CRUD completi (GET, POST, PUT, DELETE)
+- ✔️ Configurare `DbContext` in `Program.cs` con database reale (SQLite)
+- ✔️ Aggiungere `TasksController` con routing REST
+- ✔️ Implementare metodi CRUD completi (GET, POST, PUT, DELETE)
 - [ ] Aggiungere validazioni e middleware per gestione errori
-- [ ] Integrare AutoMapper per mappare tra entità e DTO
+- ✔️ Integrare AutoMapper per mappare tra entità e DTO
 - [ ] Proteggere le rotte con JWT (autenticazione e ruoli)
 - [ ] Documentare le API con Swagger
+
 
 ### 🌐 Frontend
 
