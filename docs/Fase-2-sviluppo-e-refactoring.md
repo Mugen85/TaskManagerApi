@@ -1,4 +1,4 @@
-# 🧾 Refactor entità, controller e test automatici
+# 🧾 Fase successiva: Refactor entità, controller e test automatici
 
 ## ✅ Obiettivo della fase
 
@@ -65,12 +65,13 @@ CreateMap<ToDoTask, TaskAllDto>().ReverseMap();
 
 ```
 📦 TaskManager.Api
-├── 📁 Controllers         --> TasksController, WeatherForecastController
+├── 📁 Controllers         --> TasksController, WeatherForecastController, AuthController
 ├── 📁 Data                --> TaskDbContext.cs
 ├── 📁 Dtos                --> TaskAllDto.cs
 ├── 📁 Entities            --> ToDoTask.cs
 ├── 📁 Mappings            --> UserProfile.cs
 ├── 📁 Migrations          --> Migrazioni EF Core
+├── 📁 Settings            --> JwtSettings.cs
 ├── 📄 Program.cs
 ├── 📄 appsettings.json
 ```
@@ -119,6 +120,7 @@ Integrare Swagger (OpenAPI) per generare documentazione automatica dell'API e pe
 
    ```csharp
    builder.Services.AddSwaggerGen();
+   builder.Services.AddEndpointsApiExplorer();
    ```
 
 3. 🧰 Attivato Swagger e SwaggerUI:
@@ -149,3 +151,77 @@ Integrare Swagger (OpenAPI) per generare documentazione automatica dell'API e pe
 * ✔️ Documentazione automatica generata per tutti gli endpoint pubblici
 * ✔️ Accesso da browser funzionante (`/swagger`)
 * ✔️ Pronto per estensioni future (versioning, descrizioni, security)
+
+---
+
+# 🧾 Fase successiva: Integrazione JWT (JSON Web Token)
+
+## ✅ Obiettivo della fase
+
+Implementare l'autenticazione tramite token JWT per:
+
+* 🔐 Proteggere gli endpoint con `[Authorize]`
+* 🔑 Generare token JWT validi via API `/api/auth/login`
+* ✅ Validare token per ogni richiesta
+
+---
+
+## 🔧 Passaggi implementati
+
+1. 📦 Aggiunto pacchetto NuGet:
+
+   ```bash
+   dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+   ```
+
+2. 📄 Aggiunta sezione `Jwt` in `appsettings.json`:
+
+```json
+"Jwt": {
+  "Key": "una-chiave-sicura-di-almeno-32-caratteri",
+  "Issuer": "TaskManagerApi",
+  "Audience": "TaskManagerApiClient",
+  "ExpiresInMinutes": 60
+}
+```
+
+3. 🧩 Creata classe `JwtSettings.cs` in `Settings/`
+
+4. 🧰 Configurata autenticazione JWT in `Program.cs` con validazione sicura
+
+5. 🧪 Gestito il caso di `null` su `Get<JwtSettings>()` con controllo esplicito:
+
+```csharp
+var jwtSettings = builder.Configuration.GetSection("Jwt").Get<JwtSettings>()
+    ?? throw new InvalidOperationException("Configurazione JWT mancante");
+```
+
+6. 👤 Creato `AuthController` con metodo `POST /api/auth/login`
+
+   * Credenziali hardcoded: `admin` / `123456`
+   * Restituzione token JWT in risposta
+
+7. 🔒 Aggiunto `[Authorize]` agli endpoint del controller `TasksController`
+
+8. ⚙️ Ordine corretto del middleware:
+
+   ```csharp
+   app.UseAuthentication();
+   app.UseAuthorization();
+   app.MapControllers();
+   ```
+
+9. 🧪 Verifica in Swagger:
+
+   * Inserimento token JWT nell’`Authorize` senza `Bearer`
+   * Test chiamate protette dopo autenticazione
+   * Corretto errore `Bearer Bearer {token}` → solo token puro
+
+---
+
+## ✅ Risultato della fase
+
+* ✔️ Token JWT generato e validato correttamente
+* ✔️ Endpoint protetti funzionanti con `[Authorize]`
+* ✔️ Swagger aggiornato per supportare autorizzazione Bearer
+* ✔️ Tutto il sistema pronto per gestire utenti, ruoli e frontend Blazor

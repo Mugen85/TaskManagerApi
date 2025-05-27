@@ -3,7 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using TaskManager.Api.Dtos;            // per TaskAllDto
 using AutoMapper;
 using TaskManager.Api.Data;
-using ToDoTask = TaskManager.Api.Entities.ToDoTask; // Questo ti dà accesso alla classe Task
+using ToDoTask = TaskManager.Api.Entities.ToDoTask;
+using Microsoft.AspNetCore.Authorization; // Questo ti dà accesso alla classe Task
 
 
 namespace TaskManager.Api.Controllers
@@ -14,6 +15,7 @@ namespace TaskManager.Api.Controllers
     {
 
         // GET: api/tasks
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TaskAllDto>>> GetAll()
         {
