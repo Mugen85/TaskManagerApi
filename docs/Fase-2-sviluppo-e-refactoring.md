@@ -1,4 +1,4 @@
-# 🧾 Fase successiva a creazione: refactor entità, controller e test automatici
+# 🧾 Refactor entità, controller e test automatici
 
 ## ✅ Obiettivo della fase
 
@@ -92,3 +92,60 @@ CreateMap<ToDoTask, TaskAllDto>().ReverseMap();
 * ✔️ Test automatici funzionanti per ogni endpoint
 * ✔️ AutoMapper correttamente integrato
 * ✔️ Architettura solida, modulare, facilmente estendibile
+
+---
+
+# 🧾 Fase successiva: Integrazione di Swagger / OpenAPI
+
+## ✅ Obiettivo della fase
+
+Integrare Swagger (OpenAPI) per generare documentazione automatica dell'API e permettere test da interfaccia web.
+
+* 📄 Documentare in modo trasparente ogni endpoint REST
+* 💡 Permettere ai futuri sviluppatori (o frontend) di capire parametri, risposte, modelli
+* ⚙️ Offrire un'interfaccia di test interattiva via browser (`/swagger`)
+
+---
+
+## 🔧 Passaggi implementati
+
+1. 📦 Aggiunto pacchetto NuGet:
+
+   ```bash
+   dotnet add package Swashbuckle.AspNetCore
+   ```
+
+2. 🧩 Registrato Swagger in `Program.cs`:
+
+   ```csharp
+   builder.Services.AddSwaggerGen();
+   ```
+
+3. 🧰 Attivato Swagger e SwaggerUI:
+
+   ```csharp
+   var app = builder.Build();
+
+   if (app.Environment.IsDevelopment())
+   {
+       app.UseSwagger();
+       app.UseSwaggerUI();
+   }
+   ```
+
+4. 🧪 Verificato accesso alla documentazione su:
+
+   ```
+   https://localhost:{porta}/swagger
+   ```
+
+5. 📝 Verificata la presenza automatica di ogni endpoint del `TasksController`
+
+---
+
+## ✅ Risultato della fase
+
+* ✔️ Swagger installato e configurato correttamente
+* ✔️ Documentazione automatica generata per tutti gli endpoint pubblici
+* ✔️ Accesso da browser funzionante (`/swagger`)
+* ✔️ Pronto per estensioni future (versioning, descrizioni, security)
