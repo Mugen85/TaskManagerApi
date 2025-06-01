@@ -116,11 +116,52 @@ dotnet test --collect:"XPlat Code Coverage"
 
 ## 📚 Documentazione
 
-La documentazione tecnica dettagliata si trova nella cartella `docs/`:
+*(English version below)*
+
+### Documentazione API Interattiva (Swagger/OpenAPI)
+L'API include una documentazione interattiva completa e la possibilità di testare gli endpoint direttamente dal browser, grazie all'integrazione con Swagger (OpenAPI).
+
+**Per accedere alla UI di Swagger:**
+
+1.  **Avvia l'applicazione** seguendo le istruzioni nella sezione "Come iniziare" (tipicamente con il comando `dotnet run --project src/TaskManager.Api`).
+2.  Una volta che l'applicazione è in esecuzione, il terminale mostrerà gli URL su cui è in ascolto. Prendi nota dell'**URL base** (ad esempio, `https://localhost:7236` o `http://localhost:5181` – la porta specifica potrebbe variare a seconda della tua configurazione locale).
+3.  Apri il tuo browser web e aggiungi `/swagger/index.html` all'URL base annotato.
+    * **Esempio:** Se l'output del terminale indica che l'app è in ascolto su `https://localhost:7236`, allora l'URL completo per Swagger sarà:
+        `https://localhost:7236/swagger/index.html`
+
+Da questa pagina Swagger, potrai visualizzare tutti gli endpoint disponibili, i loro parametri, i tipi di risposta attesi e potrai anche inviare richieste di prova direttamente dall'interfaccia.
+
+### Documentazione Aggiuntiva del Progetto
+La documentazione tecnica più dettagliata, i diagrammi dell'architettura e le guide specifiche per gli sviluppatori si trovano all'interno della cartella `docs/` di questa repository:
 
 * [Documentazione completa del progetto](docs/Documentazione-creazione-progetto.md)
 * Diagrammi dell'architettura (in sviluppo)
 * Guide per sviluppatori (in sviluppo)
+
+---
+---
+
+## 📚 Documentation (English Version)
+
+### Interactive API Documentation (Swagger/OpenAPI)
+The API includes comprehensive interactive documentation and the ability to test endpoints directly from the browser, thanks to its integration with Swagger (OpenAPI).
+
+**To access the Swagger UI:**
+
+1.  **Start the application** by following the instructions in the "Come iniziare" (Getting Started) section (typically with the command `dotnet run --project src/TaskManager.Api`).
+2.  Once the application is running, the terminal will display the URLs it is listening on. Take note of the **base URL** (e.g., `https://localhost:7236` or `http://localhost:5181` – the specific port may vary depending on your local configuration).
+3.  Open your web browser and append `/swagger/index.html` to the noted base URL.
+    * **Example:** If the terminal output indicates the app is listening on `https://localhost:7236`, then the full URL for Swagger will be:
+        `https://localhost:7236/swagger/index.html`
+
+From this Swagger page, you can view all available endpoints, their parameters, expected response types, and you can also send test requests directly from the interface.
+
+### Additional Project Documentation
+More detailed technical documentation, architectural diagrams, and specific developer guides are located within the `docs/` folder of this repository:
+
+* [Complete project documentation (Italian)](docs/Documentazione-creazione-progetto.md)
+* Architecture diagrams (under development)
+* Developer guides (under development)
 
 ## 👨‍💼 Autore
 
