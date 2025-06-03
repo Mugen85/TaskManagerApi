@@ -69,15 +69,15 @@ Utilizza `DbContextOptions` e `UseInMemoryDatabase()` per simulare l'ambiente se
 
 1. 🔧 **Configurare** `DbContext` in `Program.cs` con database reale (es: SQLite, MySQL) ✅ **FATTO**
 
-2. 🛠️ **Aggiungere** `TasksController` con routing REST
+2. 🛠️ **Aggiungere** `TasksController` con routing REST ✅ **FATTO**
 
-3. 🌀 **Integrare AutoMapper** per conversione entità <-> DTO
+3. 🌀 **Integrare AutoMapper** per conversione entità <-> DTO ✅ **FATTO**
 
-4. ✅ **Scrivere metodi CRUD completi** (GET, POST, PUT, DELETE)
+4. ✅ **Scrivere metodi CRUD completi** (GET, POST, PUT, DELETE) ✅ **FATTO**
 
-5. 🔐 **Aggiungere JWT** per autenticazione e protezione delle rotte
+5. 🔐 **Aggiungere JWT** per autenticazione e protezione delle rotte ✅ **FATTO**
 
-6. 📄 **Abilitare Swagger** per documentare le API
+6. 📄 **Abilitare Swagger** per documentare le API ✅ **FATTO**
 
 7. 🎨 **Creare frontend in Blazor WebAssembly** per interfaccia utente completa
 
