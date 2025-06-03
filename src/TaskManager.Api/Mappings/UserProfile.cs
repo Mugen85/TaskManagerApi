@@ -9,6 +9,15 @@ namespace TaskManager.Api.Mappings
         public UserProfile()
         {
             CreateMap<ToDoTask, TaskAllDto>().ReverseMap();
+
+            // Mapping da Entità a DTO di risposta
+            CreateMap<ToDoTask, TaskResponseDto>();
+
+            // Mapping da DTO di creazione a Entità
+            CreateMap<CreateTaskRequestDto, ToDoTask>();
+
+            // Mapping da DTO di aggiornamento a Entità
+            CreateMap<UpdateTaskRequestDto, ToDoTask>();
         }
     }
 }
